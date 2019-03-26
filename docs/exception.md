@@ -13,9 +13,9 @@ async def hello(request):
 ```
 
 You can also register custom handlers only if the system encounters an exception to this request error code or to this request class。
+```
 from alita.exceptions import NotFound
 
-```
 @app.register_error_handler(NotFound)
 async def hello(request):
      return '404 error!'

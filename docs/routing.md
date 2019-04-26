@@ -25,5 +25,33 @@ def hello(request, name):
 Note: if written `<name>` , the default is `str`。
 
 ## Route Function Params
+- rule: View function route rule。
 - methods: View functions are requested by default 'GET'。
 - endpoint: Map endpoint between view function and routing rule. User can customize this value. Default is name of view function。
+- options: Variable parameters, user-defined function parameters, mainly for global view processing functions。
+
+## `url_for` Function
+Both the App object and blueprint object can use the url_for function to generate the view URL by specifying the endpoint。
+
+Used in view functions:
+```
+@app.route('/')
+async def index(request):
+    url = app.url_for('index1')
+    return RedirectResponse(url)
+```
+
+Used in blueprint functions:
+```
+br = Blueprint('demo')
+
+@br.route('/')
+async def index(request):
+    url = app.url_for('index1')
+    return RedirectResponse(url)
+```
+
+Used in template:
+```
+<h1><a href="{{url_for('index1')}}">test</a></h1>
+```

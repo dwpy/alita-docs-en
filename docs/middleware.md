@@ -12,6 +12,6 @@ def process_request(request):
 Modify the response object by calling a user-defined handler after the view function processes the request。
 ```
 @app.response_middleware
-def process_request(request):
-    return request
+def process_response(request, response):
+    return response
 ```

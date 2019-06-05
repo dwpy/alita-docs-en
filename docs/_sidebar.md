@@ -7,6 +7,7 @@
   - [Response](response.md)
   - [Exception](exception.md)
   - [Static File](static.md)
+  - [WebSocket](websocket.md)
 
 - configuration
   - [Configuration Load](configuration_load.md)
